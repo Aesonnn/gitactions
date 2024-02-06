@@ -10,5 +10,12 @@ jobs:
     needs: Exploring
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Building the project"
+      - run: echo "Building the project $ {{ secrets.MY_SECRET }}"
       - run: echo "Build complete"
+  
+  Checking:
+    needs: Building
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
