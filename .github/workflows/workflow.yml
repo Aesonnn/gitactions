@@ -10,7 +10,7 @@ jobs:
     needs: Exploring
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Building the project $ {{ secrets.MY_SECRET }}"
+      - run: echo "Building the project ${{ secrets.MY_SECRET }}"
       - run: echo "Build complete"
   
   Checking:
